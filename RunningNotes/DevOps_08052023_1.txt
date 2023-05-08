@@ -2,6 +2,16 @@ Date : 08-05-2023
 DevOps and AWS
 Mr. RAGHU (AshokIT)
 -------------------
+onetime:
+git clone https://github.com/javabyraghu/DevOps630AM.git
+
+every day:
+cd DevOps630AM
+git pull
+-------------------------------------
+
+
+
 Conflict : When multiple developers are working on same code files.
 then we need to pull code from github before push.
 If code file is not matching with current version in remote with local.
