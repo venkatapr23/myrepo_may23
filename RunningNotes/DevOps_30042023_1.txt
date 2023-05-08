@@ -1,0 +1,286 @@
+Date : 30-04-2023
+DevOps and AWS
+Mr. RAGHU (ASHOKIT)
+-------------------
+mv : move or rename.
+
+*)something similer to cut and paste.
+
+mv <oldfilename> <newfilename>
+Ex:
+mv hello.txt message.txt
+
+mv <olddirectory>  <newdirectory>
+# moving multiple files to one directory (last one must be destination)
+$ mv file1 file2 file3 directory/
+
+# moving all files to directory
+$ mv *  directory/
+
+# moving one directory to another directory
+$ mv mydetails/ /tmp/
+=========================================================
+vi Editor: (default editor)
+We need Open a file using one editor to modify/write/read
+existing file/new file.
+
+Task:
+create a new file "welcome.txt" using vi editor
+with file data
+	Hello users
+	welcome to
+	all
+
+(save and quite) display details using cat
+----------------------------------------------------------
+*) nano is another editor
+=> This is new editor (may not be available in all Linux machines)
+=> we can install : sudo yum install nano -y
+=> It opens file in edit mode only
+ ctl + O  (save modified file data)
+ ctrl + x to exit editor
+
+---------------------------------------------------------
+*)Note:
+If rm command is given message like this:
+  rm: cannot remove '*': No such file or directory
+means there are no files to be deleted.
+
+======================================================
+man : manul pages of command
+To read details/description about command 
+
+Steps:
+1. man ls (it opens ls command manul page)
+2. Arrow keys to scroll (Up / Down)
+3. come outof manual page 'q'
+4. To search any word press '/' then word to search
+ex: /--all
+5. click 'n' to goto next matching 
+   click 'N' (or shift+n) to goto previous matching
+6. 'g' to come to starting of the page
+   'G' to goto last line of the page
+
+===========================================================================
+grep : to check given word is exist or not in a result / file (inside file)
+
+find / locate : search a file
+
+*) locate : this is used to find a file using its name
+=> to install this :
+  sudo yum install locate -y
+=> We need to update database of locate everytime before we search
+   sudo updatedb
+=> then we can try command : locate filename
+
+Commands for find
+# search only file name starts with det in current directory
+find . -name 'det*'  
+# search only file name starts with det every where
+find / -name 'det*'  
+# search only file name starts with det given directory
+find /home/ec2-user -name 'det*'  
+# search only file name starts with det under user home directory
+find ~ -name 'det*' 
+
+# find only files in current directory
+find . -type f
+# find only directories in current directory
+find . -type d
+
+
+============================================================================
+Q) Find a file that ends with config under current user home directory?
+find ~  -name '*config' -type f
+find /home/ec2-user  -name '*config' -type f
+
+Q) Find a directory that starts with apache under /etc/ folder?
+find /etc/ -type d -name 'apache*'
+
+Q) Find all empty files in current directory?
+find . -type f  -empty
+
+Q) Find no of child directories in given directory?
+Ex:
+|-mydata
+   |-test
+      |-one.txt
+   |-hello.txt
+   |-models
+      |-welcome
+         |-abc.txt
+Ans)
+find details/* -type d | wc -l
+======================================================================
+Q) How to reverse given string/input ?
+Use Pipe with rev
+ex: echo "welcome" | rev
+
+Q) How can we calculate given expression?
+ use pipe bc
+ex: echo "1+2+3+4" | bc
+
+Q) find uptime details of current instance?
+$ uptime
+
+Q) How can we print current date and time?
+$ date
+
+Q) Print calendar ?
+$ cal
+
+Q) How to find current user details?
+who | whoami : gives details about current user
+
+==========todays commands================
+1  ls
+    2  rm *
+    3  cat > hello
+    4  rm *
+    5  ls
+    6  cat > hello.txt
+    7  ls
+    8  cat hello.txt
+    9  mv hello.txt message.txt
+   10  ls
+   11  cat message.txt
+   12  mkdir mydetails
+   13  ls
+   14  cat > hello.txt
+   15  ls
+   16  sudo yum install tree .
+   17  sudo yum install tree -y
+   18  tree .
+   19  mv hello.txt mydetails/
+   20  tree .
+   21  mv * mydetails/
+   22  tree .
+   23  ls
+   24  ls -l /temp
+   25  ls -l /tmp
+   26  mv mydetails/ /tmp/
+   27  tree /tmp/
+   28  ls
+   29  cat > message.txt
+   30  vi message.txt
+   31  cat message.txt
+   32  vi details.txt
+   33  ls
+   34  cat details.txt
+   35  CAT details.txt
+   36  MKDIR test
+   37  LS
+   38  VI abcd
+   39  ls
+   40  nano message.txt
+   41  sudo yum install nano -y
+   42  man ls
+   43  man tree
+   44  man find
+   45  man mkdir
+   46  man ifconfig
+   47  ls --help
+   48  ls
+   49  locate config
+   50  locate details
+   51  locate details.txt
+   52  updatedb
+   53  update
+   54  updatedb
+   55  locatedb
+   56  locate --help
+   57  man locate
+   58  locate -help
+   59  locate help
+   60  sudo yum install locate
+   61  locate details
+   62  mlocate
+   63  updatedb
+   64  locate -d
+   65  locate --help
+   66  locate --database
+   67  sudo updatedb
+   68  locate config
+   69  locate config | wc
+   70  locate details.txt
+   71  cat > mymodels.txt
+   72  locate mymodels.txt
+   73  ls
+   74  sudo updatedb
+   75  locate mymodels.txt
+   76  locate mymod
+   77  locate mod
+   78  locate mymodels.txt | wc
+   79  locate mymodels.txt | wc -l
+   80  locate config | wc -l
+   81  cat > mytest.txt
+   82  locate mytest
+   83  locate mytest.txt
+   84  sudo updatedb
+   85  locate mytest.txt
+   86  cat /home/ec2-user/mytest.txt
+   87  vi /home/ec2-user/mytest.txt
+   88  cp /home/ec2-user/mytest.txt /home/ec2-user/mytest2.txt
+   89  tree .
+   90  locate mytest2.txt
+   91  sudo updatedb
+   92  locate mytest2.txt
+   93  who
+   94  whoami
+   95  pwd
+   96  find . -name 'det*'
+   97  find . -type f
+   98  find . -type d
+   99  mkdir test
+  100  find . -type d
+  101  find . -name 'details' -type f
+  102  find . -name 'det' -type f
+  103  find . -name 'det*' -type f
+  104  ls
+  105  ls -l
+  106  touch ab cd one
+  107  ls
+  108  find . -type f -empty
+  109  find . -empty -type f
+  110  ls
+  111  rm *
+  112  ls
+  113  rm -f test/
+  114  rm -r test/
+  115  ls
+  116  mkdir details
+  117  cd details/
+  118  touch abc
+  119  mkdir models
+  120  mkdir test
+  121  cd test
+  122  touch one
+  123  mkdir formats
+  124  cd formats/
+  125  touch testaa
+  126  cd ~
+  127  tree .
+  128  find details/ -type d
+  129  tree .
+  130  find details/ -type d
+  131  find details/ -type d | wc -l
+  132  find details/* -type d | wc -l
+  133  find details/* -type d
+  134  find details/ -type d
+  135  find details/* -type d
+  136  find details/* -type d | wc
+  137  find details/* -type d | wc -l
+  138  echo "welcome"
+  139  echo "welcome" | rev
+  140  echo "1+2+3"
+  141  echo "1+2+3" | bc
+  142  echo "(10*12)/5"
+  143  echo "(10*12)/5" | bc
+  144  echo 1+2+3
+  145  uptime
+  146  date
+  147  cal
+  148  who
+  149  who am i
+  150  whoami
+=============================================================

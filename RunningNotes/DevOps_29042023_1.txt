@@ -1,0 +1,297 @@
+Date : 29-04-2023
+DevOps ans AWS
+Mr. RAGHU (AshokIT)
+----------------------
+(Linux)
+Path : Location of a file.
+Ex:
+Windows :  Symbol ( \ back slash )
+(Directory:\Folder1\Folder2\FileName.extension)
+D:\AWSandDevOpsNotes\04RunningNotes\DevOps_19042023_1.txt
+
+Linux:
+( RootDirectory/Directory/Directory/filename.extension)
+/home/ajay/mydata/details.txt
+--------------------------------------------------------
+*) In linux everything is under root directory (/)
+*) We have no drives like windows
+--------------------------------------------------------
+
+Absolute vs Relative path:-
+
+Absolute Path : Indicate full file path starts from root directory
+Ex:
+ /home/ec2-user/details/info/a.txt
+ /home/ec2-user/details/info/b.txt
+
+Relative path: Indicates file path starts from current directory
+First we need to find out what is our current path using 'pwd'
+pwd - present working directory
+
+then start considering path from pwd location indicates ./ (or nothing)
+ex:
+ pwd: /home/ec2-user/
+
+then relative path : ./details/info/a.txt
+			(or)
+		      details/info/a.txt
+=========================================================
+Install tree package (software)
+sudo yum install tree -y
+
+It gives graphical format of directories 
+=========================================================
+Practice:
+---------
+cd ~  : move to home directory of user
+Ex: /home/<username>
+    /home/ec2-user
+
+cd /  : root directory
+
+cd <SpecifyPath> : Move to given directory
+
+cd .. : come back to previous directory
+
+cd ../.. : come back to 2 previous directories 
+
+ls /home/ec2-user/docs/
+
+ls -l /home/ec2-user/docs/
+
+tree .
+
+tree /home/ec2-user/docs/
+
+
+head students : display first 10 lines of a file
+tail students : display las 10 lines of a file
+
+================================================================
+grep : it is used to search given word in file(s)
+=> by default is case-sensitive 
+=> we can use a flag -i to ignore case
+=> we can use -n to ask word line number in a given file
+
+grep 'ajay' students
+grep 'Ajay' students
+# ignore case
+grep -i 'Ajay' students
+# display line number
+grep -n 'jay' students
+
+grep -in 'Ajay' students
+grep -ni 'Ajay' students
+grep -i -n 'Ajay' students
+
+---------------------------------
+wc : word count
+this command is used to count number of lines, words, characters in a given file
+
+
+[ec2-user@ip-172-31-33-180 ~]$ cat -n students
+     1  welcome to sample
+     2  this is for
+     3  model
+     4  examples
+     5  information test
+[ec2-user@ip-172-31-33-180 ~]$ wc students
+ 5 10 62 students
+[ec2-user@ip-172-31-33-180 ~]$ wc -l students   # will given only line count
+5 students
+[ec2-user@ip-172-31-33-180 ~]$ wc -c students    # will give only characters count
+62 students
+[ec2-user@ip-172-31-33-180 ~]$ wc -w students     # will give only words count
+10 students
+[ec2-user@ip-172-31-33-180 ~]$
+
+
+====================================================
+Q) Create below folder system/ directories using one time mkdir.
+Expected Output:
+ /
+  |-home
+     |-ec2-user        (exist upto this)
+          |-ashokit
+	     |-raghu   
+                 |-devops
+
+A) we can use mkdir to create directories.
+  If we give a path then it will try to create last one
+  by considering previous directories exist.
+
+  use -p flag to create even non-existed parent directory at same time.
+
+$ mkdir -p ashokit/raghu/devops
+
+
+Q) What is | (pipe) symbol in linux?
+Q) Display 4th line to 8th line of student file?
+
+A) output of one command is given to input of another command
+ head -n 8 students | tail -n 5 students
+
+Q) Display file data with line numbers?
+
+ cat -n students
+
+Q) Search a word in 'sample' in students file with all cases?
+grep 'sample' students
+
+=============Todays commands==========================
+1  pwd
+    2  mkdir docs
+    3  cd docs
+    4  pwd
+    5  cat > details.txt
+    6  pwd
+    7  ls
+    8  mkdir examples
+    9  cat > test.txt
+   10  cat > infos.txt
+   11  ls
+   12  cd examples/
+   13  ls
+   14  pwd
+   15  touch ab data informs
+   16  ls
+   17  tree
+   18  cd ~
+   19  tree
+   20  sudo yum install tree -y
+   21  tree
+   22  pwd
+   23  cd /home/ec2-user/docs/examples/
+   24  pwd
+   25  cd /home/ec2-user/
+   26  cd /home/ec2-user/docs
+   27  pwd
+   28  cd ~
+   29  pwd
+   30  cd /
+   31  pwd
+   32  cd ~
+   33  tree
+   34  pwd
+   35  cd ./docs/examples/
+   36  pwd
+   37  cd ..
+   38  cd ../..
+   39  cd ../../../..
+   40  cd ../../../../../..
+   41  cd ~
+   42  pwd
+   43  cd ..
+   44  pwd
+   45  cd ..
+   46  pwd
+   47  tree /home
+   48  tree /home/ec2-user
+   49  cd ~
+   50  tree .
+   51  pwd
+   52  cat test.txt
+   53  cat /home/ec2-user/docs/test.txt
+   54  pwd
+   55  cat docs/test.txt
+   56  cat ./docs/test.txt
+   57  pwd
+   58  tree
+   59  cat /home/ec2-user/docs/examples/data
+   60  cat /home/ec2-user/docs/examples/datas
+   61  cat /home/ec2-user/docs/examples/data
+   62  cat > /home/ec2-user/docs/examples/data
+   63  cat /home/ec2-user/docs/examples/data
+   64  cat docs/examples/data
+   65  cat .docs/examples/data
+   66  cat /docs/examples/data
+   67  ls /home/ec2-user/docs/
+   68  ls -l /home/ec2-user/docs/
+   69  tree
+   70  mkdir ashokit/raghu/devops
+   71  mkdir ashokit
+   72  cd ashokit/
+   73  pwd
+   74  mkdir raghu
+   75  cd raghu/
+   76  pwd
+   77  mkdir devops
+   78  cd devops/
+   79  pwd
+   80  cd ~
+   81  tree
+   82  rm -f ./ashokit/raghu/devops/
+   83  rmdir ./ashokit/raghu/devops/
+   84  tree
+   85  rmdir ./ashokit/raghu
+   86  tree .
+   87  rmdir ashokit/
+   88  mkdir ashokit/raghu/devops
+   89  mkdir -p  ashokit/raghu/devops
+   90  tree .
+   91  cat > students
+   92  cat students
+   93  head students
+   94  tail students
+   95  head -n 3 students
+   96  tail -n 4 students
+   97  head -4 5 students
+   98  head -n 4 4+  students
+   99  head -n {4..8} students
+  100  head students
+  101  head -n 4 students
+  102  head -n 8 students
+  103  head -n 8 students | tail -n 5
+  104  cat students
+  105  grep 'syed' students
+  106  grep 'Syed' students
+  107  grep -i 'Syed' students
+  108  cat >> students
+  109  grep 'syed' students
+  110  grep -n 'syed' students
+  111  grep -i 'syed' students
+  112  grep -ni 'syed' students
+  113  grep -in 'syed' students
+  114  grep -i -n 'syed' students
+  115  grep 'welcome' *
+  116  grep 'wel' *
+  117  grep 'syed' *
+  118  grep -i 'syed' *
+  119  grep -ni 'syed' *
+  120  cat students
+  121  grep 'test' *
+  122  grep 'test' student
+  123  grep 'test' students
+  124  grep 'test' /home/ec2-user/students
+  125  grep -i 'test' /home/ec2-user/students
+  126  grep -i 'Test' /home/ec2-user/students
+  127  grep -in 'Test' /home/ec2-user/students
+  128  cat -n students
+  129  cat students
+  130  grep 'sample' students
+  131  grep 'Sample' students
+  132  grep -i 'Sample' students
+  133  grep -in 'Sample' students
+  134  grep -ni 'Sample' students
+  135  grep -n 'Sample' students
+  136  grep -n -i 'Sample' students
+  137  cat students
+  138  wc students
+  139  man wc
+  140  wc students
+  141  cat > students
+  142  cat -n students
+  143  wc students
+  144  wc -l students
+  145  wc -c students
+  146  wc -w students
+  147  ls
+  148  cat students
+  149  cp students mydata
+  150  ls
+  151  cat students
+  152  cat mydata
+  153  ls
+  154  mv mydata newmydata
+  155  ls
+==================================================================

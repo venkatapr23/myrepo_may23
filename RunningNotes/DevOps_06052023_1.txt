@@ -1,0 +1,531 @@
+Date : 06-05-2023
+DevOps and AWS
+Mr. RAGHU (AshokIT)
+-----------------------
+https://education.github.com/git-cheat-sheet-education.pdf
+
+Git : Client software / Dev /client machines
+
+Vendors: (Store your code, manage versions, history..etc)
+  GitHub (Microsoft)
+  GitLab
+  BitBucket
+  ..etc
+
+git init : Empty git repository [.git]
+git add  : Select files to stage area
+git commit : Send to local repo
+git push   : Send files to remote repo
+
+git remote add <name> <url>
+# Default branch name in local machine is master, in remote it is main
+# So rename to main
+git branch -M main  
+
+======================================================
+git clone : To fetch a copy of a remote repository into local repository
+[new project import]
+
+ex: git clone https://github.com/javabyraghu/fliptest.git
+cd fliptest/
+
+
+$ git status
+will show all untracked, unstaged and tobe commited files
+
+$ git log : To find all commits history
+Output:
+Commit : ID (Branch details)
+Author:___
+Date: ____
+ 	COMMIT MESSAGE
+
+
+$ git log --oneline:
+Output: 
+ID (Branch details) COMMIT MESSAGE
+
+$ git diff commit-id1 commit-id2
+This command is used to show the differences between two commits
+(What are added and what are deleted)
+
+$ git pull
+to fetch files from remote repository to local repository and workspace
+=================================================================
+Q) What is the diff b/w git clone and git pull?
+A) clone : get copy of a project from remote to local
+   pull  : get latest commits exist in remote, but not in local
+
+Q) What is the diff b/w git push and git pull?
+A)
+
+Q) What is mean by untracked/ un-staged and How can find those files?
+Untracked : A new file is created in workspace(Dev Machine)
+             [not exist in remote and local repository]
+Unstaged : Existed file is modified and not added to stage yet
+[use command git add ]
+
+To find them use command : 
+$ git status
+
+*If you see message like : to be committed then files are in staged area.
+
+Q) What is the default branch name in Git?
+A) master(old) / main (new)
+============================================================================
+Branch:
+=> Creating new code base / separate code for each developer/department.
+=> Every local branch is connected with remote branch (upstream)
+ ex:  main  ---> origin/main
+      features_1 -> origin/features_1
+
+=> New branch can be created from one existed branch
+ (either we can create in local and update to remote
+   or we can create in remote and update to local)
+
+
+Examples Branches:
+developer/main, UAT[Client Testing], production[end users], hotfix, features, staging_server ..etc
+-----------------------------------
+
+-new branch (must use existed branch --> fro there a copy is created)
+$ git branch <new_name>
+
+# create a new branch feature1 from main (or any) and still in main branch
+$ git branch feature1
+(old)
+# create and move to new branch
+$ git checkout -b feature2
+
+
+-- to view all branches
+$ git branch
+
+-switch one branch to another
+$ git checkout branchName
+$ git checkout feature1
+$ git checkout main
+
+$ git switch feature1
+=============================================================
+-copy commits from one branch to another branch (merge)
+
+# We need to link local branch with remote by creating new remote branch
+$ git push --set-upstream origin feature1
+$ git push -u origin feature1
+
+To fetch new branches from remote to local
+$ git pull
+$ git checkout <branch_name>
+============================================================
+-delete branch
+
+# Delete branch in local
+$ git branch -d feature1
+
+# Delete Remote branch
+$ git push origin -d feature1
+
+=====================history==================
+    1  CD /D/
+    2  cd /d/
+    3  cd LinuxLab/
+    4  ls
+    5  vagrant up
+    6  vagrant box list
+    7  vagrant ssh
+    8  vagrant destory
+    9  cls
+   10  cd..
+   11  cd ..
+   12  cd DevOps/
+   13  mkdir vagrant-vms
+   14  cd vagrant-vms/
+   15  mkdir centos7-vm
+   16  pwd
+   17  vagrant init geerlingguy/centos7
+   18  vagrant up
+   19  vagrant ssh
+   20  exit
+   21  /d/
+   22  cd /d/
+   23  cd DevOps/vagrant-vms/
+   24  vagrant ssh
+   25  logout
+   26  cd /d/
+   27  exit
+   28  vagrant reload
+   29  vagrant box list
+   30  vagrant reload geerlingguy/centos7
+   31  vagrant global-status
+   32  vagrant reload 1971ada
+   33  cat /var/lib/jenkins/secrets/initialAdminPassword
+   34  exit
+   35  #!/bin/bash
+   36  echo "BASH SCRIPT STARTED"
+   37  sudo yum update
+   38  pwd
+   39  whoami
+   40  ls -l
+   41  echo "BASH FINISHED"
+   42  vagrant global-status
+   43  vagrant destroy 7141b8e
+   44  vagrant up
+   45  vagrant ssh db01
+   46  exit
+   47  vagrant ssh web01
+   48  vagrant destory
+   49  vagrant global-status
+   50  vagrant destory 93c40fc
+   51  vagrant destroy 93c40fc
+   52  vagrant up
+   53  vagrant ssh db01
+   54  exit
+   55  vagrant ssh
+   56  exit
+   57  vagrant up
+   58   20.10.18
+   59   20.10.18
+   60  vagrant suspend
+   61  exit
+   62  vagrant suspend
+   63  exit
+   64  vagrant ssh
+   65  vagrant up
+   66  vagrant ssh
+   67  logout
+   68  vagrant up
+   69  VAGRANT SSH
+   70  vagrant ssh
+   71  exit
+   72  vagrant up
+   73  vagrant ssh
+   74  vagrant ssh
+   75  exit
+   76  vagrant up
+   77  vagrant ssh
+   78  vagrant ssh
+   79  vagrant suspend
+   80  exit
+   81  vagrant up
+   82  vagrant ssh
+   83  vagrant suspend
+   84  exit
+   85  vagrant up
+   86  exit
+   87  vagrant up
+   88  vagrant ssh
+   89  exit
+   90  vagrant halt
+   91  exit
+   92  git status
+   93  git add .
+   94  git commit -m "Code"
+   95  git push
+   96  exit
+   97  git init
+   98  git add .
+   99  git status
+  100  git commit -m "First Commit"
+  101  git branch -M main
+  102  git remote add origin https://github.com/javabyraghu/SpringBootRestCrudMySQLEx.git
+  103  git push -u origin main
+  104  exit
+  105  git clone https://github.com/javabyraghu/BootWorkSpace6AM.git
+  106  git status
+  107  cd BootWorkSpace6AM/
+  108  git status
+  109  git add .
+  110  git commit -m "Spring Core and Spring Boot Core Examples"
+  111  git branch
+  112  git push
+  113  exit
+  114  git pull
+  115  git add .
+  116  git commit -m "Update for kafka, mq, config and admin with gateway"
+  117  git push
+  118  exit
+  119  git clone https://github.com/javabyraghu/BootWorkSpace6AM.git
+  120  cd BootWorkSpace6AM/
+  121  git pull
+  122  git add .
+  123  git commit -m "Database Operations using JPA"
+  124  git push
+  125  exirt
+  126  exit
+  127  git add .
+  128  git commit -m "WEB MVC WORK SPACE"
+  129  git push
+  130  exit
+  131  git add .
+  132  git commit -m "UI Design and pagination"
+  133  git push
+  134  git commit -m "UI Design and pagination"
+  135  git add .
+  136  git commit -m "UI Design and pagination"
+  137  git push
+  138  exit
+  139  git pull
+  140  exit
+  141  git add .
+  142  git commit -m "Security apps"
+  143  git push
+  144  exit
+  145  $ git clone https://github.com/buraksarp/docker-elk.git
+  146  $ cd docker-elk
+  147  git clone https://github.com/buraksarp/docker-elk.git
+  148  cd docker-elk
+  149  docker-compose build
+  150  docker-compose up
+  151  docker-compose build
+  152  docker-compose build
+  153  docker-compose up
+  154  docker-compose up
+  155  exit
+  156  git init
+  157  git status
+  158  git add .
+  159  git commit -m "EC-45436 User Exp Fixed for Date 30 days"
+  160  git remote add origin https://github.com/javabyraghu/TestApplication.git
+  161  git branch
+  162  git branch -M main
+  163  git branch
+  164  git push -u origin main
+  165  git push
+  166  git log
+  167  git log --oneline
+  168  git show 958af5d
+  169  git status
+  170  git add .
+  171  git commit -m "test next"
+  172  git push
+  173  git log --oneline
+  174  git status
+  175  git add .
+  176  git commit -m "two txt"
+  177  git push
+  178  git log --oneline
+  179  git reset ce5c1e3
+  180  git status
+  181  git add .
+  182  git commit -m "updating latest changes"
+  183  git push
+  184  git pull
+  185  git status
+  186  git commit -m "sample update"
+  187  git add .
+  188  git commit -m "sample update"
+  189  git push
+  190  git log
+  191  git log
+  192  git reset 958af5d1ab29809eba43829fe53097bdd13916dc
+  193  git reset --hard 958af5d1ab29809eba43829fe53097bdd13916dc
+  194  git add .
+  195  git status
+  196  git restore --staged Two.txt
+  197  git push
+  198  git pull
+  199  git log
+  200  git status
+  201  git pull
+  202  git logs
+  203  git log
+  204  git reset ce5c1e3c3b482c1212c5c7ced0d351b33b30a34e
+  205  git push
+  206  git push -u origin main
+  207  git pull
+  208  git push -u origin main
+  209  git add .
+  210  git commit -m "update"
+  211  git push
+  212  exit
+  213  git clone https://github.com/javabyraghu/TestApplication.git
+  214  cd TestApplication/
+  215  git logs
+  216  git log
+  217  git branch
+  218  git reset --hard 958af5d1ab29809eba43829fe53097bdd13916dc
+  219  git add .
+  220  git reset --hard 958af5d1ab29809eba43829fe53097bdd13916dc
+  221  git status
+  222  git reset --hard 958af5d1ab29809eba43829fe53097bdd13916dc -u origin main
+  223  git status
+  224  git add .
+  225  git commit -m "local updates"
+  226  git push
+  227  git pull
+  228  exit
+  229  history
+  230  exit
+  231  java -jar zipkin-server-2.12.9-exec.jar 
+  232  exit
+  233  java -jar zipkin-server-2.12.9-exec.jar 
+  234  exit
+  235  git add .
+  236  git commit -m "Update Spring Cloud Examples"
+  237  git push
+  238  exit
+  239  git clone https://github.com/javabyraghu/saga-orchestration.git
+  240  exit
+  241  git clone https://github.com/javabyraghu/saga-choreography
+  242  exit
+  243  docker-compose up
+  244  exit
+  245  git branch models
+  246  git branch 
+  247  git checkout models
+  248  touch test
+  249  git add .
+  250  git commit -m "Updates"
+  251  git push
+  252  git push -u origin models
+  253  git checkout main
+  254  git merge models
+  255  git status
+  256  git push
+  257  git branch -d models
+  258  git push
+  259  git push origin -d models
+  260  git checkout -b test1
+  261  touch samples
+  262  git commit -am "test new"
+  263  git add .
+  264  git commit -m "samples'
+  265  git commit -m "samples"
+  266  git push
+  267  git push -u origin test1
+  268  git checkout main
+  269  ls -l
+  270  git pull
+  271  ls -l
+  272  git log
+  273  git log --oneline
+  274  git log --graph
+  275  git checkout test1
+  276  touch file1
+  277  git add . 
+  278  git commit -m "samples"
+  279  git push
+  280  touch abcd
+  281  git add .
+  282  git commit -m "test"
+  283  git push
+  284  touch finlahs
+  285  git add .
+  286  git commit -m "sampless"
+  287  git push
+  288  git checkout main
+  289  git rebase test1
+  290  git log --graph
+  291  git push
+  292  git pull
+  293  git push
+  294  git branch
+  295  git branch -d test1
+  296  git push origin -d test1
+  297  git log --graph
+  298  git revert 3f54d8d683dbcd8ad8f8580fd2a47621df964fea
+  299  git log --oneline
+  300  git push
+  301  git revert 0ac3e1a
+  302  git push
+  303  exit
+  304  ls -l
+  305  git clone https://github.com/javabyraghu/fliptest.git
+  306  cd fliptest/
+  307  ls -l
+  308  cd ..
+  309  exit
+  310  git clone https://github.com/javabyraghu/maven-web-app.git
+  311  git clone https://github.com/javabyraghu/fliptest.git
+  312  cd fliptest/
+  313  ls -l
+  314  touch details.txt
+  315  git status
+  316  git status
+  317  git status
+  318  git add sample.txt details.txt 
+  319  git add .
+  320  git status
+  321  touch formats.txt
+  322  git status
+  323  git status
+  324  git add .
+  325  git status
+  326  git commit -m "FLIP-551230 Updating files for User Operations"
+  327  git push
+  328  git status
+  329  git add .
+  330  git commit -m "FLIP-88755 SAMPLE UPDATE"
+  331  git push
+  332  git log
+  333  git log --oneline
+  334  git diff ee84fd8 ecb55fd
+  335  git log --oneline
+  336  git diff d9f3d1f ee84fd8
+  337  git log
+  338  git log --oneline
+  339  git diff ee84fd8 ecb55fd
+  340  git status
+  341  git add .
+  342  git commit -m "NEW UPDATE-1"
+  343  git push
+  344  git log --oneline
+  345  git diff ecb55fd 8d2d1ee
+  346  git status
+  347  git add .
+  348  git commit -m "UPDATE-2"
+  349  git push
+  350  git log --oneline
+  351  git diff 8d2d1ee 46c12fe
+  352  git log --graph
+  353  git log
+  354  ls -l
+  355  ls -l
+  356  git pull
+  357  ls -l
+  358  git log --oneline
+  359  cd ..
+  360  git pull
+  361  git clone https://github.com/javabyraghu/fliptest.git
+  362  cd fliptest/
+  363  git pull
+  364  git branch feature1
+  365  git checkout -b feature2
+  366  git branch
+  367  git branch
+  368  git switch main
+  369  git branch
+  370  git checkout feature1
+  371  git branch
+  372  touch my_features
+  373  git add .
+  374  git commit -m "NEW FEATURES"
+  375  git push
+  376  git push --set-upstream origin feature1
+  377  git branch
+  378  git checkout feature2
+  379  touch process.txt
+  380  git add .
+  381  git commit -m "new details"
+  382  git push
+  383  git push -u origin feature2
+  384  git branch
+  385  git pull
+  386  git branch
+  387  git pull -u
+  388  git branch --all
+  389  git checkout uat
+  390  git checkout production
+  391  git branch 
+  392  git branch -d feature1
+  393  git branch
+  394  git push -d origin/feature1
+  395  git push -d origin/feature2
+  396  git branch
+  397  git branch --all
+  398  git push -d origin/feature1
+  399  git push origin -d feature1
+  400  git push origin -d feature1
+  401  history
+  402  history > hist.txt

@@ -1,0 +1,138 @@
+Date : 08-05-2023
+DevOps and AWS
+Mr. RAGHU (AshokIT)
+-------------------
+Conflict : When multiple developers are working on same code files.
+then we need to pull code from github before push.
+If code file is not matching with current version in remote with local.
+
+this can be happend in same branch or b/w branches (while merge)
+
+*) "PULL FIRST, PUSH NEXT".
+
+== Shell commands from history=============
+  501  git clone https://github.com/javabyraghu/MyTest.git
+  502  git pull
+  503  cd MyTest/
+  504  git pull
+  505  git status
+  506  git add .
+  507  git commit -m "Update Data"
+  508  git push
+  509  git pull
+  510  git status
+  511  git add .
+  512  git commit -m "new update"
+  513  git push
+  514  git pull
+  515  git status
+  516  git add .
+  517  git commit -m "update file"
+  518  git push
+  519  git pull
+  520  git add .
+  521  git commit -m "New Update for Student"
+  522  git push
+=================================================
+
+.gitignore [file] :- In local machine there can be multiple temp files
+    or work files may exist, we can avoid pushing those files to remote
+    by adding their details to .gitignore.
+
+
+== .gitignore ===========
+*.log
+/tmp
+/dist
+
+===========================
+
+If we create files with extension .log and folders /tmp and /dist
+their sub-folder and files are ignored to send to remote.
+
+-----------------------------------------------------------------------------
+[stash stack]
+
+git stash
+git stash save "MESSAGE"
+git stash pop
+git stash apply stash@{id}
+
+git stash show 
+git stash show -p
+git stash show stash@{id} -p
+
+git stash clear
+git stash drop stash@{id}
+
+
+==================history===========
+    1  git status
+    2  git status
+    3  git status
+    4  cat >> .gitignore 
+    5  git status
+    6  git add .
+    7  git commit -m "Ignore file update"
+    8  git push
+    9  git status
+   10  git pull
+   11  git status
+   12  cat a.txt 
+   13  git stash
+   14  git stash list
+   15  git stash pop
+   16  cat a.txt 
+   17  git stash list
+   18  git stash save "A TXT FILE DATA"
+   19  git stash list
+   20  git status
+   21  git stash save "STUDENT FILE ALSO MODIFIED"
+   22  git stash list
+   23  git status
+   24  git stash list
+   25  git stash apply stash@{0}
+   26  git stash list
+   27  git stash apply stash@{1}
+   28  git stash show -p
+   29  git stash show
+   30  git stash show -p
+   31  git stash show satsh@{1}
+   32  git stash show stash@{1}
+   33  git stash show stash@{1} -p
+   34  git stash clear
+   35  git stash list
+   36  git status
+   37  git stash save "My Updates"
+   38  git stash list
+   39  git stash save "NEW STUDENT UPDATE"
+   40  git stash list
+   41  git stash drop stash@{1}
+   42  git stash list
+   43  git status
+================================
+*) BEST APPROCH OF WORKING ON CODE CHANGES
+1. In Remote files are updated (in local old versions exist)
+2. Modified Local/Workspace Files
+
+3. Stash All local chages first
+4. Do git pull
+5. apply/pop stash to workspace
+6. Compare modifications using git diff
+7. Change as per your requirement
+8. git add , git commit , git push
+
+===history commands===================
+    2  git clone https://github.com/javabyraghu/MyTest.git
+    3  cd MyTest/
+    4  ls -l
+    5  git stash save "My Changes"
+    6  git status
+    7  git pull
+    8  git stash pop
+    9  cat a.txt 
+   10  git diff
+   11  git add .
+   12  git commit -m "NEW UPDATES"
+   13  git push
+======================================

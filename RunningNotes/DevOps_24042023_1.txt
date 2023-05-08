@@ -1,0 +1,92 @@
+Date : 24-04-2023
+DevOps and AWS
+Mr. RAGHU (ASHOKIT)
+-------------------------------
+Linux OS
+Commands
+
+AWS Account (Free Account)
+Debit Card / Credit Card
+
+https://aws.amazon.com/console/
+
+*** Keep your aws account details very secure.
+
+Jenkins -- Machine (Linux)
+Tomcat  -- Machine (Linux)
+Docker & K8s -- Machine (Linux)
+==================================================================================
+SDLC Process
+
+Plan --> Release
+
+Customer / client --> .... Software ...
+
+What are your requirements? --> Documentation --> Design --> Code --> Test --> Release
+--> Moniter
+------------------------------------------------------------------------------------
+AGILE v/s DevOps
+
+Stakeholders
+Client
+PO
+BA
+EPIC
+HLD/LLD : High Level Document(Funcational things/overview) / Low Level Document (technical)
+
+Story : A work need to be implemented (can be a module/sub module...)
+Ex: GM001 - User Register and Login
+    GM002 - Inbox and Display process
+    GM003 - Search and Result using Filter
+    GM004 - Sent Mails and Spam 
+    .....
+    GM200 .....
+      
+
+--Every Story--
+TicketId : (Unique Number) GM-001
+Title    : User Register and Login
+
+Description:
+  .....
+
+Story Points: 3.0 (SP)     [8 hours/day => 1 SP]
+[time given to implement work]
+
+Acceptance Criteria: [main points to be considered]
+-> Register field are must (no optional Fields)
+-> Must verify Mobile number using OTP
+-> Login can be done using mobile number or emailid
+.....
+
+Labels: SP1.0, ABC-client, XYZ-App.
+
+Created By: RAGHU
+
+Assigned To: VIJAY
+------------------------------------
+
+Product Backlogs: Un-planned / Un-implemented Stories.
+
+Scrum Team : Group of people involved in App development.
+
+Sprint : Work need to be implemented in a period of time.
+2weeks , 1 month, 2 months ...
+
+Sprint Process
+-> Plan : Assign work to each person in team.
+-> Execute/Process
+-> Review
+-> Next Sprint
+
+Story Lifecycle
+OPEN : Issue/work is created, ready to implement.
+IN-PROGRESS: Started working on it, coding...
+RESOLVED: Work is done/code is finished/already exist/duplicated...
+CLOSED : Testing is done (QA) and working fine.
+
+call/meeting: Scrum meeting/standup call.
+Team, give me updates for some time...
+
+Bug: A problem in story, not working as expected.
+

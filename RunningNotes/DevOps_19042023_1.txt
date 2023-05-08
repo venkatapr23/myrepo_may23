@@ -1,0 +1,35 @@
+				Date: 19-04-2023
+				DevOps with AWS
+			       Mr. RAGHU (ASHOKIT)
+            --------------------------------------------------------
+Pre-Req: Nothing
+Who    : B.Tech/BE
+Why    : Trending
+----------------------
+6:30AM -- 8:00AM IST | 1hr 30min 
+2 months- DevOps | 2 months- AWS 
+Projects-Java, Python, Dotnet..etc
+
+1years valid
+
+Build : Create single package(file/zip) using application code files
+Test  : Validate Application by using JUnit, NUnit, Selinium ..etc
+Release: Provide it to end-customer (Place app in server)
+
+YAML/JSON/ BASH SCRIPT --> Linux Commands
+
+Plan : B.A.
+Code : Developer
+Build : Package 
+Test  : 
+Release : 
+Deploy : Place app inside server and start server
+Operate : ___
+Moniter: ____
+
+Email:
+javabyraghu@gmail.com
+
+
+
+

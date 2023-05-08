@@ -1,0 +1,72 @@
+Date : 04-05-2023
+DevOps and AWS
+Mr. RAGHU (AshokIT)
+---------------------
+Software Management / Package Management
+-------------------------------------------
+If we want to install/update/un-install any software in Linux Machine
+then use below Package management commands.
+
+1. yum (Yellowdog Updater Modified)
+Amazon Linux, CentOS, RHEL
+
+2. apt (apt-get)
+Ubuntu, Debian
+
+3. deb  = Debian Package Manager
+Debian
+
+4. rhel = Red Hat Enterprise Linux
+RHEL Linux
+
+# to update Linux OS (when we create any new Linux Instance)
+$ sudo yum update -y
+
+Here -y means auto-approval. 
+
+$ sudo yum install git -y
+$ sudo yum remove git -y
+------------------------------------
+sed 's/oldWord/NewWord/g' filename
+
+Q) How can we delete balnk lines using sed command?
+$ sed '/^$/d' message.txt
+
+Here ^ indicates start and $ indicates end
+^$ = Empty line
+
+
+==Task===========
+1. Create EC2 Instance Type - RedHat/CentOS
+sudo yum update -y
+
+
+Then install
+wget 
+git
+maven
+tree
+java-11-openjdk
+jenkins
+
+Ref link:
+https://www.jenkins.io/doc/book/installing/linux/#red-hat-centos
+
+Ref: docker
+https://docs.docker.com/engine/install/rhel/
+
+
+2.  Create EC2 Instance Type - Ubuntu (optional)
+sudo apt update -y
+
+=================================================
+Task#2
+Create a new account in Github:
+https://github.com/
+> Click on signup
+> Fill details
+> Verify Email at your inbox
+
+====================================
+MyGithub Account:
+https://github.com/javabyraghu

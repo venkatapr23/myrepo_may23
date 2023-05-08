@@ -1,0 +1,121 @@
+Date : 05-05-2023
+DevOps and AWS
+Mr. RAGHU(ASHOKIT)
+--------------------------
+VCS(version controlling System) / SCM (Source Code Management) ?
+
+*) Store all developers code at one common storage.
+push : Send code from dev machine to storage(Repository)
+pull : Fetch code from storage(Repository) to dev machine.
+
+*) Version Controlling means need to store all details of code modifications.
+ How many times code is modified?
+ Who did these modifications?
+ At What date and time?
+ No of lines added ? removed? NO. Of versions?
+
+*) Git Client also known as Git or GitBash is used in dev/config machine
+ that connects with Git Vendor (ex: GitHub)
+
+*) Branch : Maintain separate code base for applications
+ like development branch, production, UAT, Stage, hotfix, testing..etc 
+
+
+-> Local Repository : Developer machine contains code at .git folder
+-> Remote Repository : GitHub contains code (connected to all dev machines)
+
+===============================================================================
+S#1 Register and Login GitHub Account
+[https://github.com/]
+
+S#2 Create one new/Empty Repository
+ex: bmstest (public repository)
+> Click on + Symbol > Enter any name > Create Repository
+
+URL:
+https://github.com/javabyraghu/bmstest.git
+
+S#3 Make sure you installed Git Client / Git Bash
+ https://git-scm.com/downloads
+
+
+S#4 Create a folder name : bmstest (execute below commands)
+
+--very first time------
+git config --global user.email "javabyraghu@example.com"
+git config --global user.name "RAGHU SIR"
+---------------------------------------------
+
+
+$ mkdir bmstest
+$ cd bmstest
+
+# Creates new empty local repository
+$ git init
+
+# create some code files
+$ touch abc.txt mno.txt pqr.txt
+
+# Rename local branch
+$ git branch -M main
+
+# select files to stage area
+$ git add abc.txt mno.txt pqr.txt
+ (or)
+$ git add .       <--- (dot)
+
+# Commit files to local repository
+$ git commit -m "My First Commit"
+
+# See all commits?
+$ git log
+
+### create link between local repository and remote repository (only once)
+$ git remote add origin https://github.com/javabyraghu/bmstest.git
+
+# send code from local repo to remote repo
+
+$ git push -u origin main
+$ git push
+
+==========AWS EC2 Instance =============================
+$ sudo yum install git -y
+$ git version
+
+$ git config credential.helper store
+
+Generate Password Token
+> Login to github account and enter URL:
+https://github.com/settings/tokens
+
+(or Click on your name > settings > developer settings >
+  personal access token > Token classic)
+
+> Generate new Token > Choose New token classic
+> choose checkboxes (Repo, user and admins)
+
+> click on copy symbol and right click on MobaXterm s/w to paste
+ (you can not see that , just press enter) 
+
+----------------------------------------------
+    1  git version
+    2  sudo yum list
+    3  sudo yum list | grep "git"
+    4  sudo yum install git -y
+    5  git version
+    6  mkdir fliptest
+    7  cd fliptest/
+    8  git init
+    9  git branch -M main
+   10  git branch
+   11  touch test.txt sample.txt
+   12  git status
+   13  git add .
+   14  git commit -m "update first time"
+   15  git config --global user.email "javabyraghu@example.com"
+   16  git config --global user.name "RAGHU SIR"
+   17  git config credential.helper store
+   21  git remote add origin https://github.com/javabyraghu/fliptest.git
+   22  git push -u origin main
+   23  cd ..
+

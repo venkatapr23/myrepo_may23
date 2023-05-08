@@ -1,0 +1,42 @@
+Date : 03-05-2023
+DevOps and AWS
+Mr. RAGHU (ASHOKIT)
+----------------------
+chown : Change ownership of a file.
+
+*) if we use ls -l we get details of file that contains user(owner) and group names.
+*) We can modify those details using chown
+
+ex:
+sudo chown sam:devops message.txt
+sudo chown sam message.txt
+sudo chown :devops message.txt
+
+*)Note: above command will update only for one file/directory at a time.
+=> If we want to update owner and group details for both directory and
+ its files including sub-directories then use flag '-R' 
+
+
+Q) What is the difference between 'chmod' and 'chown' commands?
+chmod ---> it is used for managing file permissions (r,w,x)
+chown ---> it is used for managing file ownership ( user:group )
+
+===================================================================
+*) Note:
+=> If a file name starts with dot(.) ex: .formats then it is called as hidden file
+=> to see all hidden files use " ls -a " (or) " ls -la "
+
+
+wget https://dlcdn.apache.org/maven/maven-3/3.9.1/binaries/apache-maven-3.9.1-bin.zip
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.74/bin/apache-tomcat-9.0.74.zip
+
+ps -aux (and) top commands are used to find services details
+
+htop : it is advanced to top command. But we need to install this using
+$ sudo yum install htop -y
+$ htop
+
+free  : To find free space details
+uptime: to find instance running time
+lsblk : To find all memory blocks attached to device
+---------------------------------------------------------------------------------

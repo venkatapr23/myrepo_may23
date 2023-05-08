@@ -1,0 +1,33 @@
+Date : 25-04-2023
+DevOps and AWS
+Mr. RAGHU (ASHOKIT)
+-----------------------------------------------------
+Q) What is the difference between AGILE and DevOps?
+
+AGILE is a SDLC Model which is used to follow Iterative Approch (Sprints)
+to fill the gap between customers/clients and development team.
+
+DevOps a Automated process, it is used to delivery/deploy the application
+to UAT/production after every iteration(Sprint).
+
+DevOps is next level process for AGILE to automate delivery of application.
+====================================================================================
+Task#1 AWS Account Creation
+
+Task#2 Install MobaXTerm for Windows Machine
+https://mobaxterm.mobatek.net/download-home-edition.html
+> Extract to a folder and Double click to open MobaXterm_Personal_23.1.exe
+
+====================================================================================
+1. New Zoom Link
+2. WhatsApp Group for DevOps Student.
+3. javabyraghu @gmail.com
+4. 1Hr 30min Session 
+5. Tools using AWS
+6. FAQs / Mock / Resume ( Fresher / 3-4+ )
+7. Support.
+
+DevOps (AWS EC2) ... AWS
+
+Projects --> Java, UI, Python, MS
+======================================================

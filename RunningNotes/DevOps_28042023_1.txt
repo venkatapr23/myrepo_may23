@@ -1,0 +1,265 @@
+Date : 28-04-2023
+DevOps and AWS
+Mr. RAGHU (AshokIT)
+------------------------------
+*) Command : instrcution to OS(Kernel) what todo?
+
+*) Command Type:
+1. File Operations
+2. Networking
+3. Package (Software) management
+4. User/groups management
+5. File Permissions
+..etc
+
+Syntax:
+ command -attributes    
+ex:
+  ls
+  ls  -l
+  ls  -la (same)  ls  -l -a
+===========================================================
+$ touch: It is used to create empty files
+
+=> By using this we can create single or multiple empty files
+  ex:
+    touch a test models info  b c d
+
+=> It is not recomanded to give space in file name.
+   If you want to create use quotes (either single or double)
+   ex: touch "my data"
+       touch 'my data'
+
+=> Expression : {start..end}  => Generates numbers in sequence
+  ex: touch details{1..10} => This command creates 10 files 
+       with names like details1 , details2, ... details10
+============================================================================
+***** Note: Once a file/directory is deleted no way to recover in Linux ****
+============================================================================
+rm *  (or) rm filename : to delete all files (or) to delete one by one file
+
+$ rm file1
+$ rm file1 file2 file3
+$ rm *
+$ rm details{1..5}   (This one deletes files : details1, details2, ..details5)
+$rm -i mydata  ( Here -i or -I will display message to confirm delet : yes / no )
+
+-----------------------------------------------------------------------------
+ command : cat
+-----------------------------------------------------------------------------
+1. Display content of a file (or multiple files)
+$ cat details
+$ cat mydata
+$ cat details mydata information
+
+2. Write/Override data of a file with new data ( Syntax : cat > filename)
+
+$ cat > details
+<type some data>
+press: ctrl+d
+
+3. Append data to a file ( syntax: cat >> filename)
+
+$ cat >> details
+<type some data>
+press: ctrl+d
+
+
+*** Even cat command creates file if not exist (when you use > or >>)
+Press ctl+d to save the file content at last.
+
+*) you can not modify data at multiple/single lines.
+   We can only Override/Write/Append/display.
+
+4. We can copy one(or multiple) file(s) data to new/another file
+$ cat mydata > newfile
+
+$ cat mydata process > newfile
+
+================================================================
+command : mv
+================================================================
+1. We can rename of a file/directory
+2. We can move files/directory from one path(place) to another.
+
+mv <oldfilename> <newfilename>
+ex:
+ $ cat > data
+  hello (ctl+d)
+ 
+ $ ls
+ $ mv data mydata
+
+========================================================================
+mkdir : Creating new directory / folder
+cd    : change directory
+rmdir : remove empty directories
+
+Examples:
+$ mkdir mydata
+$ cd mydata
+$ cat > ab
+hi (ctrl+D)
+$ touch test models
+
+$ mkdir ashokit
+$ cd ashokit
+$ cat > message
+welcome
+(ctrl+D)
+
+$ cd ..  (come out of directory)
+
+$ rmdir mydata (if it is empty only)
+$ rm -r mydata (to delete even non-empty directories)
+
+
+=========================================================================
+pwd : present working directory
+
+It will display where are we right now?
+ie in which directory location 
+=========================================================================
+ls : listing all files
+ls -l / ll : long listing all files
+=========================================================================
+
+
+==todays work==========
+1  ls
+    2  touch a
+    3  ls
+    4  touch b c d hello
+    5  ls
+    6  touch my_data
+    7  ls
+    8  touch "our infom"
+    9  ls
+   10  touch  details{1..10}
+   11  ls
+   12  touch formats{550..555}
+   13  ls
+   14  rm *
+   15  ls
+   16  cat details
+   17  cat > details
+   18  ls
+   19  cat details
+   20  cat >> details
+   21  ls
+   22  cat details
+   23  cat > details
+   24  cat details
+   25  ls
+   26  cat > mydata
+   27  cat mydata
+   28  ls
+   29  cat details
+   30  cat mydata
+   31  cat details mydata
+   32  ls
+   33  rm *
+   34  ls
+   35  cat > mydata
+   36  cat my
+   37  cat mydata
+   38  ls
+   39  cat mydata > newfile
+   40  ls
+   41  cat newfile
+   42  cat mydata
+   43  cat > process
+   44  ls
+   45  cat mydata process > ashokitinfo
+   46  ls
+   47  cat ashokitinfo
+   48  ls
+   49  cat mydata
+   50  cat newfile
+   51  cat process
+   52  cat ashokitinfo
+   53  tac ashokitinfo
+   54  ls
+   55  rm *
+   56  ls
+   57  cat > data
+   58  cat data
+   59  ls
+   60  mv data mydata
+   61  ls
+   62  touch details{1..5}
+   63  ls
+   64  rm details{1..5}
+   65  ls
+   66  man ls
+   67  man mv
+   68  man rm
+   69  ls
+   70  rm -i mydata
+   71  ls
+   72  rm -i mydata
+   73  ls
+   74  mkdir mydata
+   75  ls
+   76  cd mydata/
+   77  cd ..
+   78  rmdir mydata/
+   79  ls
+   80  mkdir mydata
+   81  ls
+   82  cd mydata/
+   83  ls
+   84  cd ..
+   85  rmdir mydata/
+   86  ls
+   87  mkdir mydata
+   88  cd mydata/
+   89  cat > ab
+   90  touch test models
+   91  ls
+   92  cd ..
+   93  ls
+   94  cd mydata/
+   95  ls
+   96  mkdir ashokit
+   97  cd ashokit/
+   98  cd ..
+   99  ls
+  100  cd ashokit/
+  101  ls
+  102  cat > message
+  103  ls
+  104  pwd
+  105  cd ..
+  106  pwd
+  107  cd mydata/
+  108  pwd
+  109  cd ashokit/
+  110  pwd
+  111  cd ../..
+  112  ls
+  113  rmdir mydata/
+  114  man rmdir
+  115  rm *
+  116  ls
+  117  rm -r mydata/
+  118  ls
+  119  cat > details
+  120  mkdir data
+  121  cat > inform
+  122  ls
+  123  ls -l
+  124  ll
+  125  type ll
+  126  ls
+  127   ls -l
+  128  ls -lh
+  129  ls -lt
+  130  ls -lr
+  131  man ls
+  132  ls -l
+  133  history
+=================
+ history -c : to delete entire history
+
+

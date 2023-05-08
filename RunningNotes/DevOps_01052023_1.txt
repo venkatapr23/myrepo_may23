@@ -1,0 +1,123 @@
+Date : 01-05-2023
+DevOps and AWS
+Mr. RAGHU (AshokIT)
+-------------------
+*)User/Group Commands and File Permissions
+
+1. Linux is Multi-user OS and supports groups.
+2. We create multiple users and add/remove to different groups.
+3. Group is a logical unit of users (based on roles)
+Ex:
+  Developers, Admins, Testing, Support, ..etc
+
+--case study--------
+1. we create new user 
+$ sudo useradd ajay
+
+2. we add password to user
+
+$ sudo passwd ajay
+Enter Password : ****
+Re-Enter Password: ****
+
+$ id ajay
+
+3. we create new group
+
+$ sudo groupadd devops
+
+4***. we add user to group
+$ sudo usermod -aG devops  ajay 
+
+5***. we remove user from group
+# Detach user from group (still both user and group exist)
+$ sudo gpasswd -d ajay devops
+
+6. we remove user/group from OS.
+$ sudo userdel ajay
+$ sudo groupdel devops
+
+-------------------------
+
+*) Note: For every user one directory is created by LinuxOS
+ ie called as User Home.
+ ex:
+   Username          User-Home Directory
+ --------------------------------------------
+     ajay              /home/ajay/
+     syed              /home/syed/
+     ec2-user          /home/ec2-user/
+
+*)Note:
+When we create a new user (ex: ajay) also a new group is created 
+with same user name (ex: ajay)
+
+
+Q) Where all users/groups data is stored?
+/etc/passwd  and /etc/group
+
+Q) What is the default group is created when a new user is created?
+When we create a new user (ex: ajay) also a new group is created 
+with same user name (ex: ajay)
+
+Q) How can we find who are all users added to a given group?
+sudo lid -g <groupname>
+
+==Task===================================
+1. create 3 users ajay, sam, syed
+2. create a group devops and developers
+3. add ajay,sam to devops also sam,syed to developers.
+4. Detach all users from their groups added
+5. remove all groups and users.
+=========================================
+
+r -> read
+w -> write/modify/remove
+x -> execute -> run and see output (shell commands/ shell script)
+
+
+*) Example:
+1) write file permissions order (it is file)
+user can read(r) and execute(x)
+group can read
+other can execute 
+
+A) -r-xr----x
+
+2) write file permissions order (it is file)
+user can read(r), write(w) and execute(x)
+group can read(r) and write(w)
+other can read(r) 
+
+-rwxrw-r--
+
+3) write file permissions order (it is file)
+user can read(r) and write(w) 
+group can read(r) and execute(x)
+other can execute(x) only
+
+-rw-r-x--x
+
+====================================================
+File permissions using chmod :
++ -> will add given permission 
+- -> will remove given permission
+= -> will reset with given permission
+
+Q) Modify file(test.txt) pemissions in given format
+ user can read(r=4) and write(w=2)
+ group can read(r=4) and execute(x=1)
+ others can execute(x=1)
+
+ chmod u=rw test.txt
+ chmod g=rx test.txt
+ chmod o=x test.txt
+
+ chmod 651 test.txt
+
+Q) Modify file(model.txt) pemissions in given format
+ user can read, write and execute
+ group can execute
+ others can read and write
+
+ chmod 716 model.txt

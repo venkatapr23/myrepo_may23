@@ -1,0 +1,129 @@
+Date : 27-04-2023
+DevOps and AWS
+Mr. RAGHU (AshokIT)
+------------------
+Linux
+
+*) Linux Kernel is like OS that conncts with H/w components.
+*) Open Source : You take code, check, modify, upgrade, release..
+*) Shell : Software(Code), interpreter
+   User -> type commands (ex: mkdir ) -> Terminal -> Shell -> Convert into Kernel format
+*) Applications: set of commands/statements to do some work.
+
+
+EC2 - Elastic Compute Cloud 
+*) These are Region based Services.
+*) Ex: If we create Ec2 Instance in ap-south-1 (mumbai)
+   then it can not be accessed from other region.
+
+*) Private key is generated and shared by AWS to Users to secure connection.
+*) File extension is .pem - Privacy Enhanced Mail.
+
+*) Linux Machines by default uses 8GB SSD (Volume).
+
+*) We need one SSH (Secure Shell) Client s/w to connect with EC2 Instance
+Ex: MobaXTerm, OpenSSH.
+
+
+============Stage#1 Launch AWS Linux Machine =======================
+1. Goto : https://aws.amazon.com/console/ , click on login
+2. Choose Region based on your location
+  India : ap-south-1
+3. Click on Launch Instance and choose same
+(check all details in document)
+
+===========Stage#2 Connect to Machine using your PC=================
+4. Choose any client software to connect like MobaXTerm
+5. Fill details
+  Public IP
+  Username : ec2-user
+  Port : 22
+  and Security KeyPair (.pem) file
+
+===========Stage#3 Execute some commands  =================
+6. Now we can type Linux commands like
+ls
+pwd
+who
+date
+uptime
+logout (to come out)
+Press 'R' to reconnect
+
+===========Stage#4 disconnect to Machine and Terminate Instance in AWS=============
+7. Goto AWS account and click on Instance check box and choose instance state 
+   terminate to stop instance.
+----------------------------------
+Linux:
+/   --> root folder/directory
+~   --> home directory of current user
+
+# -> Root User
+$ -> Normal User
+
+Windows:
+D:/Test/sample/abc.txt
+
+Linux:
+/Text/sample/abc.txt
+
+Basic Linux Commands:
+1. ls -> to view files and folder 
+2. touch -> to create an empty file / update timestamp of a file
+3. echo "Message" -> To print message to console
+4. rm <filename> -> to delete a file
+5. > (use symbol) -> To write/redirect output to a file
+6. cat <filename> : To display content of a file
+
+
+FAQs:
+Q) What is the diff b/w Stop and Terminate EC2 Instance?
+Q) Does Public IP gets changed by AWS EC2 if we restart?
+Q) What are all details required for SSH Connection ?
+
+Q) Explain Linux Machine File System ?
+
+== My commands=====
+    1  clear
+    2  who
+    3  ls
+    4  pwd
+    5  date
+    6  logout
+    7  cls
+    8  clear
+    9  ls
+   10  ls /
+   11  ls /bin
+   12  ls
+   13  ls /
+   14  ls /lib
+   15  ls /etc
+   16  cd /
+   17  cd ~
+   18  sudo su -
+   19  ls
+   20  touch details
+   21  touch inform
+   22  touch models
+   23  ls
+   24  rm details
+   25  ls
+   26  echo "Welcome"
+   27  echo "Welcome" > inform
+   28  ls
+   29  cat inform
+   30  cat models
+   31  history
+
+
+--Task----------------------
+1. create 3 empty files : data, test, process
+2. Delete data file
+3. Write Message welcome to "test" file
+4. Print "test" file content and "process" file content
+----------------------------
+
+javabyraghu@gmail.com
+WhatsApp group
+

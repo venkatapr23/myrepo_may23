@@ -1,0 +1,107 @@
+Date : 21-04-2023
+DevOps & AWS
+Mr. RAGHU (ASHOKIT)
+--------------------
+Linux 
+Shell Commands
+Bash
+
+GitHub/Git : Developer code (.html, .css,.java, ...etc)
+
+Maven/Gradle : build tools (code -> packed)
+
+Application/web Server: Tomcat
+
+(DevOps) Server    : Physical Machine
+(Developer/Dev) Web Server : Software that runs application
+
+sonatype Nexus : Artifactory Repository (build files / packages for distibution)
+
+Sonarqube : code quality checking.
+[set of rules]
+Q) Code duplicated?
+Q) Code has no standards?
+Q) So many lines of code in single function/method?
+Q) Un-used variables?
+
+Report: Code smells, security issues..etc
+
+Github:
+https://github.com/javabyraghu?tab=repositories
+
+compiler: will check code syntax, convert into system/runtime understandable format.
+
+ex: Abc.java -> compile -> Abc.class (Java Runtime)
+
+UnitTest Code: Written by Developer but executed before package.
+
+Unit - A small part of application.
+
+Dev#1 -> Inbox Code-> Testing Code, Dev#2-> Sent Mail Code-> Test code, Dev#3-> Compose Code
+
+
+Repository : Memory/HardDisk that holds data.
+ Code Repository : Github
+ Artifactory Repo: Nexus
+
+Jenkins : CI/CD Tool, It automates Project Delivery from Source code to Production server
+An Automated Pipe line is created, to delivery application to end-customers.
+
+===========Execution Flow=============================
+1. Developer writes source code and push into GitHub (Code Repository/ Version Control Software)
+
+2. By using a Build tool (compile -> test -> Package), code is converted into packaged format.
+ex: A.java -> compile -> A.class -> Package -> A.war (Web Archive)
+Here Maven /Gradle is used.
+
+3. For code quality checking, sonarqube is used and validated, finally it generates
+  a report for a project showing all issues.
+
+4. Build files also called as Artifacts, such artifacts must be stored in
+   Artifactory Repository ex: SonaType Nexus/JFrog (DockerHub, AWS ECR)
+
+5. Finally Web Server (Tomcat, Jetty, Undertow ..etc) which runs applications
+   From Artifactory Repo, we need to copy Build file (ex WAR file) and deploy
+   (Deploy - Place app in server and start server)
+
+==================================================================================
+=> Platform means OS (Runtime).
+Software are platform dependent.
+Ex: If we download VLC MediaPlayer it comes with different extensions.
+
+MacOS   - .dmg
+Linux   - .rpm
+Windows - .exe
+
+===================================================================================
+Docker:
+Docker is software used to make our applications deployment OS independent.
+Docker converts all our code and Dependencies into single software called as Images.
+These images can be stored into one Common place ie called as DockerHub
+ (similer to nexus)
+Docker even contains runtime which need to installed on top of OS. Then run image.
+
+=> To run our application we need below components/softwares
+MyApp.war (1-Artifact)
+
+[3-Dependencies]
+JRE (Java Runtime)
+Apache Tomcat webserver
+MySQL Database
+
+=> We want to run our application, on any OS by using Images concept.
+
+  Image S/w = OS Independent (Artifact + Dependencies) => MyApp
+
+
+1. Create Image
+2. Ship Image (Send from one Machine to Another Machine) [Push/pull]
+  using Hub/ECR
+3. Run Image on any OS using Image Runtime.
+------------------------------------------------------------------------
+javabyraghu @gmail.com
+Q) Explain End-to-End CI/CD Process?
+Q) What is Docker Image?
+Q) What is DockerHub?
+Q) What is DockerRuntime?
+=========================================================================

@@ -1,0 +1,41 @@
+Date : 26-04-2023
+DevOps and AWS
+Mr. RAGHU (ASHOKIT)
+----------------------
+Linux
+
+*) Linux Kernel is like OS that conncts with H/w components
+*) Open Source : You take code, check, modify, upgrade, release..
+*) Shell : Software(Code), interpreter
+   User -> type commands (ex: mkdir ) -> Terminal -> Shell -> Convert into Kernel format
+*) Applications: set of commands/statements to do some work.
+
+
+============Stage#1 Launch AWS Linux Machine =======================
+1. Goto : https://aws.amazon.com/console/ , click on login
+2. Choose Region based on your location
+  India : ap-south-1
+3. Click on Launch Instance and choose same
+(check all details in document)
+===========Stage#2 Connect to Machine using your PC=================
+4. Choose any client software to connect like MobaXTerm
+5. Fill details
+  Public IP
+  Username : ec2-user
+  Port : 22
+  and Security KeyPair (.pem) file
+
+===========Stage#3 Execute some commands  =================
+6. Now we can type Linux commands like
+ls
+pwd
+who
+date
+uptime
+logout (to come out)
+Press 'R' to reconnect
+
+===========Stage#4 disconnect to Machine and Terminate Instance in AWS=============
+7. Goto AWS account and click on Instance check box and choose instance state 
+   terminate to stop instance.
+

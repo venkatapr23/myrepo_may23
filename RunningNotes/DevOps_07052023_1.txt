@@ -1,0 +1,125 @@
+Date : 07-05-2023
+DevOps and AWS
+Mr. RAGHU (AshokIT)
+-------------------------
+Merge : Copy one Branch commits into another branch.
+
+main -> a, b,e
+feature->c,d,f
+
+copy from feature[source] to main[destination]
+
+Merge?
+git checkout <destination-branch>
+Ex: git checkout main
+
+git merge <source-branch>   [or from where to copy]
+Ex: git merge feature
+
+git push
+
+Ex: for merge example:
+https://github.com/javabyraghu/bmstest
+For Graph
+https://github.com/javabyraghu/bmstest/network
+=================task for you===========================
+
+  501  git clone https://github.com/javabyraghu/bmstest.git
+  502  cd bmstest/
+  503  ls -l
+  504  echo "1st commit" > a.txt
+  505  cat a.txt 
+  506  git status
+  507  git add .
+  508  git commit -m "1st commit"
+  509  git push
+  510  git branch feature
+  511  git push -u origin feature
+  512  git branch
+  513  echo "2nd file" > b.txt
+  514  git add .
+  515  git commit -m "2nd commit"
+  516  git push
+  517  git checkout feature
+  518  git switch feature
+  519  echo "3rd file" > c.txt
+  520  cat c.txt 
+  521  git add .
+  522  git commit -m "3rd commit"
+  523  git push
+  524  echo "4th file" > d.txt
+  525  git add .
+  526  git commit -m "4th commit"
+  527  git push
+  528  git switch main
+  529  git branch
+  530  echo "5th file" > e.txt
+  531  git add .
+  532  git commit -m "5th commit"
+  533  git push
+  534  git checkout feature
+  535  echo "6th file" > f.txt
+  536  git add .
+  537  git commit -m "6th commit"
+  538  git push
+  539  git checkout main
+  540  git merge feature
+  541  git push
+==========================================================
+
+rebase : copy commits to destination branch from source based on time-line
+
+Project for Rebase:
+https://github.com/javabyraghu/fliptest
+For Graph:
+https://github.com/javabyraghu/fliptest/network
+
+==TASK=====================
+    1  echo "1st file" > a.txt
+    2  git add .
+    3  git commit -m "1st commit"
+    4  git push
+    5  git branch feature
+    6  git branch
+    7  git checkout feature
+    8  echo "2nd file" > b.txt
+    9  git add .
+   10  git commit -m "2nd commit"
+   11  git push
+   12  git push --set-upstream origin feature
+   13  echo "3rd file" > c.txt
+   14  git add .
+   15  git commit -m "3rd commit"
+   16  git push
+   17  git checkout main
+   18  echo "4th file" > d.txt
+   19  git add .
+   20  git commit -m "4th commit"
+   21  git push
+   22  echo "5th file" > e.txt
+   23  git add .
+   24  git commit -m "5th commit"
+   25  git push
+   26  git rebase feature
+   27  git push
+   28  git pull
+   29  git push
+   30  git revet HEAD
+
+=========================================
+
+Q) When to use rebase / merge in git?
+A) In day to day work between testing and development use git merge.
+   In release/production/main use rebase.
+
+--------------------------------------------
+Merging done using UI:
+https://github.com/javabyraghu/amztest
+
+https://github.com/javabyraghu/amztest/network
+--------------------------------------------
+
+Q) How can we cancel last commit or a specific commit?
+A) git revert HEAD
+   git revert commit-id
+
