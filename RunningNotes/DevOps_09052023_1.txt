@@ -1,0 +1,110 @@
+
+
+Date : 09-05-2023
+DevOps and AWS
+Mr. RAGHU (AshokIT)
+-----------------------
+Application:
+  1. Standalone Application : Install and Use / dedicated to single PC for Using.
+	ex: VLC Media Player, MS-Office, Notepad++, EditPlus, Photoshop..etc
+	-> Download
+	-> Install
+	-> Use
+  2. Web Application: An application running in a Server, used by Client Machine
+  	(User Laptop) with client Software (Web Browser) using porotocols like HTTP/
+	HTTPS [Hyper Text Trasfer Protocol/Secure].
+
+	-> Open Browser (Google Chrome/FireFox/Opera)
+	-> Enter URL[Uniform Resource Location]/Address 
+		(ex: http://facebook.com, http://flipkart.com) [Request]
+	-> Display output [Response]
+
+===============================================================
+Java : Programming Language, Technologies, Frameworks ..etc
+
+=> By using Java, Developers can create Standalone Application.
+Java Concepts: AWT[Abstract Window Tool Kit, Swings].
+
+ Code (__.java) -> Compile (__.class) => Build (__.jar)
+
+*) JAR/jar = JAVA ARCHIVE -> A Zip Format for Java application.
+ A jar is a collection of .class files.
+
+=> By using Java, Developers can create Web Applications.
+Java Concepts: Servlets, JSP, Spring WEB MVC, Spring Boot, Microservices, REST,
+                 ..etc.
+
+ Code(__.java , __.html, __.jsp ...) => Compile and Build (___.war)
+
+*) WAR/war = WEB ARCHIVE -> A Zip Format for Web application.
+  WAR is a collection of .class files and Web Resources (HTML, CSS, JavaScript)  
+
+-------------------------------------------------
+*) EAR = Enterprise Archive (.ear = .war + EJB )
+-------------------------------------------------
+===================================================================================
+Apache Maven:
+
+1. It is Open Source given by Apache
+2. It is used for java applications.
+3. It is used by Developers
+   -> Create Project FolderSystem
+   -> Download all Required Dependencies (Spring, Hibernate..etc)
+   -> Compile and Test in local Machine
+4. It is used by DevOps also
+   -> Compile and Build using Maven Goals
+     (.java -> .class -> .war)
+
+===Example pom.xml file==========
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.app.raghu</groupId>
+  <artifactId>01-maven-web-app</artifactId>
+  <packaging>war</packaging>
+  <version>3.0-SNAPSHOT</version>
+  <name>01-maven-web-app</name>
+  <url>http://maven.apache.org</url>
+ 
+  <dependencies>
+    <dependency>                   --------------> JAR
+      <groupId>junit</groupId>           ----> JAR PROVIDER/OWNER
+      <artifactId>junit</artifactId>     ----> JAR NAME/Project Name
+      <version>3.8.1</version>           ----> JAR VERSION
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>01-maven-web-app</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.1</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+====================================================================
+*) Maven downloads all required Dependencie/JARs/Artifacts,
+  from either Central Repository (MVN Repository -- PUBLIC)
+  or Private Repository [JFrog/Nexus/AWS ECR]...etc
+
+*) Private Repository : Managed By Organizations.
+	They will keep their own/private Jars.
+
+*) Local Repository : For Every Developer Machine.
+   Windows  : C:\User\raghu\.m2
+   Linux/Mac: /home/raghu/.m2
+   *** All Your Project JARs/Dependencie/Artifacts exist here.
+
+================================================================
+Maven Goals:
+clean   : Delete all files from target folder
+compile : convert .java to .class
+test    : Execute Test cases [JUnit]
+package : Convert .class to .jar/.war (package type) using pom.xml
+install : Place build file inside local repository.
+
+                  [ mvn clean package ]
+
+mvn package = compile + test + package [ Download all required Dependencies]
