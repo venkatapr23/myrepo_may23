@@ -1,0 +1,72 @@
+
+
+Date : 10-05-2023
+DevOps and AWS
+Mr. RAGHU (AshokIT)
+----------------------
+Maven:
+Compile -> Test -> Build
+
+mvn clean : Delete all files in target folder
+mvn package: download dependencies, compile, test, build.
+
+*) mvn clean package [in the location of pom.xml file]
+
+To find package name to install
+# sudo yum whatprovides <name>
+ex: 
+$ sudo yum whatprovides tree
+
+
+# to extract a tar ball [ a compressed zip file]
+$ tar xvzf  <filename>.tar -C /destination
+x = extract , v =verbose [display what is done]
+z = zip algorithm, f = filename
+
+=> mv : Used for move and rename folder
+
+======================================================
+Note: Use Maven Document steps for maven setup
+
+$ mvn -version
+# given some output
+
+# install git software (git bash/git client)
+$ sudo yum install git -y
+
+# Clone Repository from github to EC2 Instance
+$ git clone https://github.com/javabyraghu/maven-web-app.git
+
+# goto directory where pom.xml file is present
+$ cd maven-web-app/
+$ ls -l
+
+# Clean and build current project
+$ mvn clean package
+
+=========TASK=====================
+1. Take new EC2 Instance 
+2. Install Java, Git, Wget, Maven
+3. Clone : https://github.com/javabyraghu/SB-REST-H2-DB-APP.git
+4. Goto Folder SB-REST-H2-DB-APP
+5. Do Maven clean and build
+6. See steps and final filename with extension
+=================================
+
+tar    -C [destination]
+wget   -P [destination]
+-----------------------
+vi editor [default]
+nano editor [install if it is not exist]
+$ sudo yum install nano -y
+------------------------
+Apache Tomcat : 
+It is a Java webserver. To run war projects /Web Applications
+Tomcat by default runs at port : 8080.
+We can modify to other [open file : server.xml]
+
+# To find a file name that starts with server and end with any name
+$ sudo find /opt/tomcat/ -name "server*"
+
+
+Example: http://<PublicIP>:8081/01-maven-web-app/
