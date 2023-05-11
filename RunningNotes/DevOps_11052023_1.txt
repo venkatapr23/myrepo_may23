@@ -1,0 +1,63 @@
+
+
+Date : 11-05-2023
+DevOps and AWS
+Mr. RAGHU (AshokIT)
+--------------------
+Maven  - XML Based Configuration [pom.xml]
+         Supports Java Application (Compile, Test, Build)
+	 Bit complex to configure and write
+	 Maven Central Repository (or private Repository)
+	 
+Gradle - Groovy [build.gradle]
+         Supports Multiple Language Applications (Compile, Test, Build)
+	 Task based (Easy Configuration)
+         Maven Central, JCenter, Ivy repositories, 
+
+[Application]
+  | - src/main/java
+  | - src/main/resources
+  | - src/test/java
+  | - src/test/resources
+  | - build.gradle
+
+==build.gradle========
+taskName {
+   //details
+}
+
+taskName {
+  //details
+}
+
+
+AWS Linux : 2023
+sudo yum install java-11-amazon-corretto -y
+
+
+AWS Linux 2 : sudo yum install java-11-openjdk -y 
+AWS Linux 1
+
+
+wget   URL  -P /destination
+tar         -C /destination
+unzip       -d /destination
+
+https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.73/bin/apache-tomcat-9.0.73.tar.gz
+=====================================================
+  Gradle Project + Java [Servlets] + Git + Tomcat
+=====================================================
+Stage#1 Java/git/wget/tree/nano Instal
+
+Stage#2 Gradle Install/configuration
+
+Stage#3 Tomcat Server Configuration
+
+Stage#4 Git clone [Project] -> gradle build -> Deploy
+
+
+*)Note:
+=> While using wget to download any resource 
+  if we get ERROR 404: Not Found then it is issue from provider/server
+  We should goto Provider and check for latest URL/version.
+
