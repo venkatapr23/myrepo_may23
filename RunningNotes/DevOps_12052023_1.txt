@@ -1,0 +1,34 @@
+
+Date : 12-05-2023
+DevOps and AWS
+Mr. RAGHU (AshokIT)
+-------------------
+Sonatype Nexus
+--------------
+*) Open Source, Paid version is also available.
+*) Developed using Java (JRE - Java Runtime Environment is required)
+*) Repository can store build formats of - maven, ivy, NuGet (DotNet), Docker images..etc
+*) Nexus can store Build Artifacts to share with other developers in team
+   and to store build artifacts of our application.
+
+
+Artifacts:
+*) Output of a build process
+*) Once coding is done compile and build is the step
+*) Then application is converted into single packed format
+   ie artifact.
+
+  code -> build -> output(Java - JAR/WAR/EAR/ZIP/TAR, DotNet - MSI, EXE ..etc)
+  Docker Images, ..etc
+
+*) Types:
+1. Public Artifact Repository : Every one in the world
+2. Private Artifact Repository: With in Organization (Sonatype Nexus)
+
+
+*) Cache : It is a Temp Memory that holds data to provide in faster way
+	(Reduce network calls or speed our work process)
+
+*) Proxy : Acting like a other Service provider to make service given locally
+	   or reduce acessing original server.
+
