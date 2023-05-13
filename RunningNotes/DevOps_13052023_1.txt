@@ -1,0 +1,69 @@
+
+Date : 13-05-2023
+DevOps and AWS
+Mr. RAGHU (AshokIT)
+-------------------
+Tomcat runs on port 8080 by default
+Nexus Runs on port 8081 by default
+
+*) Create Repository 
+ Type: Snapshot
+ Type: Release
+
+==DevOps Team work============================
+> Click on Server Admin and Config (Setting button type)
+> Click on Repository > Create Repository
+> choose maven2(hosted) -> Enter details
+
+ex:
+name   : raghu-release-repo
+version: release
+Deployment Policy: Allow Redeploy
+
+> Come to Browse Server content
+> Click on Browse option
+
+> Copy URLs:
+
+http://52.91.100.10:8081/repository/raghu-release-repo/
+http://52.91.100.10:8081/repository/raghu-snapshot-repo/
+
+(Share to Developers)
+
+==Developers work================
+Stage#1 Maven configuration
+
+Goto Maven Location : /opt/maven/conf (or) c:/Program Files/apache-maven-3.8/conf
+In settings.xml file, under <servers> tag add below <server> tag
+	<server>
+		<id>nexus</id>
+		<username>admin</username>
+		<password>admin</password>
+	</server>
+
+
+Stage#2 Application Configuration
+> git clone https://github.com/javabyraghu/maven-flip-app.git
+> Open Maven project
+$ cd maven-flip-app
+> Open pom.xml
+> Add below lines
+
+  <distributionManagement>  
+	<repository>
+		<id>nexus</id>
+		<name>RAGHU Releases Nexus Repo</name>
+		<url>http://52.91.100.10:8081/repository/raghu-release-repo/</url>
+	</repository>
+	
+	<snapshotRepository>
+		<id>nexus</id>
+		<name>RAGHU IT Snapshots Nexus Repo</name>
+		<url>http://52.91.100.10:8081/repository/raghu-snapshot-repo/</url>
+	</snapshotRepository>	
+</distributionManagement>
+
+
+> Execute command:
+mvn clean deploy
+
