@@ -1,0 +1,47 @@
+
+Date : 14-05-2023
+DevOps and AWS
+Mr. RAGHU (AshokIT)
+------------------
+*) EC2 Instance for Nexus (Using Amazon Linux 2023)
+*) Create Remote Repository for Maven2(Proxy)
+URL:
+http://13.233.66.207:8081/repository/raghu-remote-repo/
+
+*) Apache Maven "settings.xml" under <mirrors> tag
+  <mirror>
+    <id>nexus</id>
+    <url>http://13.233.66.207:8081/repository/raghu-remote-repo/</url>
+    <mirrorOf>central</mirrorOf>
+  </mirror>
+
+also add:
+
+  <server>
+      <id>nexus</id>
+      <username>admin</username>
+      <password>admin</password>
+  </server>
+=======================================================
+To share JARS/Artifacts to all Devs/Projects.
+
+Create one Maven2(Hosted) type:
+http://13.233.66.207:8081/repository/raghu-test-repo/
+
+*) Create Maven project -> Convert to JAR -> Upload in test-repo
+
+<dependency>
+  <groupId>com.raghu</groupId>
+  <artifactId>otp-service-app</artifactId>
+  <version>1.0</version>
+</dependency>
+
+*) Paste in pom.xml of developer project
+<repositories>
+  <repository>
+    <id>nexus</id>
+    <name>Raghu Remote Repository</name>
+    <url>http://13.233.66.207:8081/repository/raghu-test-repo/</url>
+  </repository>
+ </repositories>
+===================================================================
