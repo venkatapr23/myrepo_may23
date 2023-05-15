@@ -1,0 +1,35 @@
+
+
+Date : 15-05-2023
+DevOps and AWS
+Mr. RAGHU (AshokIT)
+--------------------
+*) CodeQuality / Standard Code:
+=> It can be validated manually by Senior Developers in Team
+=> We can even use a tool that validates our code
+  [static code analyzer] - SonarQube.
+
+Q) How Quality standards are decided?
+A) Inside Sonarqube, Developer creates rules to validate code.
+
+Q) What is Code Coverage / Test Coverage?
+A) In Developer code certain benchmark (ex: 80%) must be tested
+   by developer using Test Framework (JUnit + Mockito..etc)
+
+
+Q) What sonarqube will do?
+1) Duplicate Code: Check full code and provide duplicates to developer to modify
+2) Coding Standards: Applies All rules set and provides a detailed report
+3) Unit Tests: Executes JUnit Test cases written by developers.
+4) Code Coverage: Display how much percent of code is tested.
+4) Complex Code: Reads existed code, shows better way of writing it.
+5) Commented Code: Validates comments written in code
+6) Potential Bugs: Checks how many bugs exist in application.
+
+------------------------------------------------------------------------
+Developer Work: Use sonarQube and modify code as per instructions,
+	Modify Rules, Add/Remote/check rules, reports..
+
+DevOps Engineer: Install / Configure SonarQube, Link with Projects, Link with Jenkins.
+
+SonarQube : [above list]
