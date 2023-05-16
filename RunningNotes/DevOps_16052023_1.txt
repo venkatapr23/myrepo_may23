@@ -1,0 +1,60 @@
+
+
+
+Date : 16-05-2023
+DevOps and AWS
+Mr. RAGHU (ASHOKIT)
+----------------------
+1. We need to use t2.medium or higher.
+2. We cannot run sonarqube as root user
+  So, I'm creating sonar user.
+
+3. Sonarqube runs on port 9000 (We need to open at SecurityGroup)
+4. To view port details [sonar.properties]
+cat /opt/sonarqube/conf/sonar.properties | grep "web.port="
+
+5. Execute Maven goal "mvn sonar:sonar", which get sonar report.
+6. Submit Report to developer.
+
+SonarQube 8.9 LTS (Long Term Support)
+https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.10.61524.zip
+
+
+*) Note: check log files in case of sonar failed to start
+location: /opt/sonarqube/logs/
+tail /opt/sonarqube/logs/sonar.20230516.log
+
+
+Refer this:
+git clone https://github.com/javabyraghu/SB-REST-H2-DB-APP.git
+
+under pom.xml: (Provide sonar details)
+  <properties>
+	<sonar.host.url>http://3.110.48.207:9000/</sonar.host.url>
+	<sonar.login>admin</sonar.login>
+	<sonar.password>sonar</sonar.password>
+  </properties>
+
+
+*) mvn sonar:sonar 
+  mvn - maven command
+ 1st word sonar - maven sonar plugin
+ 2nd word sonar - maven goal (this goal execute sonar scanner and generates report)
+
+*) It is not a good approch to share username and password for developer (or) apps
+
+Go to Sonar -> Login -> Click on profile name -> My Account -> Security -> Generate Token 
+
+<sonar.host.url>http:// ec2-public-ip:9000/</sonar.host.url>
+<sonar.login>213830f4b69e13c0f3bdc2ac14e9d4af28d60542</sonar.login>
+
+For Mac OS:
+cd /sonarqube-8.9.10.61524/bin/macosx-universal-64/
+sonar.sh  start
+sonar.sh  stop
+
+For Linux OS:
+cd /sonarqube-8.9.10.61524/bin/linux-x86-64
+sonar.sh start
+sonar.sh stop
+
