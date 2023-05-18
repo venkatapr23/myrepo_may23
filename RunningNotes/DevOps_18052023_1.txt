@@ -1,0 +1,56 @@
+
+
+Date : 18-05-2023
+DevOps and AWS
+Mr. RAGHU (AshokIT)
+-------------------------
+For Windows/Mac/Linux OS Setup: [Local Setup]
+Goto:
+https://www.sonarsource.com/products/sonarqube/downloads/historical-downloads/
+*) Choose a version : SonarQube 7.9.6 LTS
+*) Extract to a location and run as below
+
+*) For MAC
+cd /downloads/sonarqube-7.9.6/bin/macosx-universal-64
+sonar.sh  start
+sonar.sh  stop
+
+*) For Linux
+/Downloads/sonarqube-7.9.6/bin/linux-x86-64
+sonar.sh  start
+sonar.sh  stop
+
+*) For Windows
+D:\sonarqube-7.9.6\bin\windows-x86-64
+Double click : StartSonar.bat
+(Ctl+C to stop)
+
+*)Note: Do not use username/password based Integration for
+  Maven application and SonarQube. Always use Token based
+  Authentication 
+
+Go to Sonar -> Login -> Click on profile -> My Account -> Security -> Generate Token 
+
+<sonar.host.url>http://localhost:9000/</sonar.host.url>
+<sonar.login>83e6cf5328a0294200bf798d2d6617486cb0956c</sonar.login>
+
+===================================================================
+1. Sonar Quality Profile 
+Profile = Set of Rules (Coding Standards)
+
+Rule: Based on Programming Language, 
+   The best approch of writing of code is given as Rule.
+
+Quality Profile : Set of Rules to be applied on a project.
+
+---------------------------------------------------
+2. Sonar Quality Gates
+Gates = Set of Bench Marks/ Set of Conditions
+
+A. Must test 90% code 
+
+100 LOC - JUnit Test ... 90 LOC
+
+B. Must have duplicates less then 3%
+
+100 LOC ... 3 LOC duplicate is fine.
