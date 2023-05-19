@@ -1,0 +1,67 @@
+
+Date : 19-05-2023
+DevOps with AWS
+Mr. RAGHU (AshokIT)
+-------------------------------
+CI CD Tool
+
+Plugin Means a Connector Software.
+Example: Maven Plugin, Git Plugin, Nexus Plugin..etc
+
+*) T2.Micro, configure, stop one your work is done.
+*) Jenkins runs on port 8080. So, open this port on SG.
+*) Install Java S/w First.
+
+$ sudo yum whatprovides java
+$ sudo yum install java-11-amazon-corretto -y
+
+----- https://www.jenkins.io/doc/book/installing/linux/#red-hat-centos ---------
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo yum upgrade
+# Add required dependencies for the jenkins package
+#sudo yum install java-11-openjdk
+sudo yum install jenkins
+sudo systemctl daemon-reload
+
+---------------------------------
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+sudo systemctl stop jenkins
+sudo systemctl restart jenkins
+
+sudo systemctl status jenkins
+======================================================================
+Job : Work which can be done using Jenkins is called as Job.
+
+-> We can configure Jobs in 2 ways:
+1. Freestyle (GUI Steps) 
+
+2. Pipeline (Code)
+   |-Scripted (Groovey)
+   |-Declarative (Easy)
+
+*) Location of jenkins: /var/lib/jenkins
+
+For Windows Machine: [Local Machine Installation]
+https://www.jenkins.io/doc/book/installing/windows/
+
+For MacOS: [Local Machine Installation]
+https://www.jenkins.io/doc/book/installing/macos/
+===============================================================================
+1. Enter URL:
+  http://<Public-IP>:8080/
+2. Check Password for Jenkins
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+
+Under tomcat instance:
+
+$ cat /opt/tomcat/conf/tomcat-users.xml
+<role rolename="admin-gui"/>
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<user username="admin" password="admin" roles="admin-gui,manager-gui"/>
+<user username="deployer" password="deployer" roles="manager-script"/>
